@@ -9,7 +9,18 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        sans: [
+          "var(--font-avenir-next)",
+          "Avenir Next",
+          "system-ui",
+          "sans-serif",
+        ],
+        avenir: [
+          "var(--font-avenir-next)",
+          "Avenir Next",
+          "system-ui",
+          "sans-serif",
+        ],
       },
       colors: {
         background: "#26262B",

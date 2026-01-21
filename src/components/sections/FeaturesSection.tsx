@@ -1,100 +1,123 @@
 import { Container } from "../layout/Container";
 import { Section } from "../layout/Section";
 import { Card } from "../ui/Card";
+import Image from "next/image";
+
+// Bottom feature cards data
+const bottomFeatureCards = [
+  {
+    title: "Write code",
+    description: "Create applications in more than 25 languages.",
+    screenshot: "/imgs/TestimonialsSection/coderunner@2x.png.png",
+    icon: "/imgs/TestimonialsSection/icon-coderunner.png.png",
+    bgColor: "bg-amber-50",
+  },
+  {
+    title: "Join meetings in a click",
+    description: "Quickly access links to your meetings from menu bar.",
+    screenshot: "/imgs/TestimonialsSection/meeter@2x.png.png",
+    icon: "/imgs/TestimonialsSection/icon-meeter.png.png",
+    bgColor: "bg-blue-900",
+  },
+];
 
 export function FeaturesSection() {
   return (
-    <Section id="apps" className="py-20 lg:py-24 pt-0">
-      <Container>
-        <div className="mb-10">
-          <p className="text-[11px] uppercase tracking-[0.2em] text-text-subtle mb-2">
-            What you get
+    <Section id="apps" className="py-20 pt-8 lg:pt-8 lg:pb-24">
+      <Container className="relative w-[1180px] h-[1519px] pr-0 pl-0 pt-16 border-t border-[#E5E5E5]">
+        {/* Section header - title on left, subtitle on right */}
+        <div className="mb-10 flex items-start justify-between pt-10">
+          <h2 className="text-2xl font-semibold">What you get on Setapp.</h2>
+          <p className="max-w-sm text-sm text-text-muted">
+            With a single monthly subscription at $9.99, you get 240+ apps for
+            your Mac.
           </p>
-          <h2 className="text-2xl font-semibold">
-            Superpowers for your Mac, in one place.
-          </h2>
         </div>
 
-        <div className="grid grid-cols-[1.2fr_1fr] gap-8 items-start">
-          <Card className="bg-gradient-to-br from-[#FF9ECF] via-[#E676FF] to-[#7C6BFF] p-[2px]">
-            <div className="rounded-[26px] bg-surface-subtle p-6 flex flex-col gap-5">
-              <div className="flex items-center justify-between">
+        <div className="absolute top-[260.83px] left-[-10px] w-[1200px] h-[1258px] flex flex-col gap-5">
+          {/* Top large card - Keep your Mac clean */}
+          <Card className="overflow-hidden w-[1180px] h-[605px] rounded-[20px] bg-[#DF96AE] p-0 shadow-card-soft border-0 flex flex-col justify-between pt-[60px]">
+            <div className="px-10 pb-6">
+              {/* Header with icon and text */}
+              <div className="flex items-start gap-4 mb-6">
+                <div className="h-12 w-12 rounded-2xl bg-white/80 flex items-center justify-center shadow-card">
+                  <Image
+                    src="/imgs/TestimonialsSection/icon-cmm.png.png"
+                    alt="Mac cleaning app icon"
+                    width={32}
+                    height={32}
+                  />
+                </div>
                 <div>
-                  <p className="text-xs font-medium text-white">
-                    Focus on deep work
+                  <p className="text-lg font-semibold text-black">
+                    Keep your Mac clean
                   </p>
-                  <p className="text-[11px] text-text-subtle">
-                    Apps that keep you in the flow.
+                  <p className="text-sm text-black/80">
+                    Remove junk, scan for malware, wipe email attachments.
                   </p>
-                </div>
-                <span className="rounded-full bg-black/30 px-3 py-1 text-[11px] text-text-muted">
-                  Productivity
-                </span>
-              </div>
-
-              <div className="rounded-2xl bg-black/50 px-4 py-3">
-                <div className="flex items-center justify-between mb-2 text-[11px] text-text-muted">
-                  <span>Tasks Today</span>
-                  <span>12</span>
-                </div>
-                <div className="h-1.5 rounded-full bg-surface-soft overflow-hidden">
-                  <div className="h-full w-2/3 rounded-full bg-accent.pink" />
                 </div>
               </div>
 
-              <div className="grid grid-cols-3 gap-4 text-[11px] text-text-subtle">
-                <div className="rounded-2xl bg-surface-soft px-3 py-2">
-                  <p className="text-xs text-white mb-1">Plan your day</p>
-                  <p>Time blocking, reminders, and more.</p>
-                </div>
-                <div className="rounded-2xl bg-surface-soft px-3 py-2">
-                  <p className="text-xs text-white mb-1">Stay focused</p>
-                  <p>Block distractions in one click.</p>
-                </div>
-                <div className="rounded-2xl bg-surface-soft px-3 py-2">
-                  <p className="text-xs text-white mb-1">Review progress</p>
-                  <p>See where your time really goes.</p>
-                </div>
+              {/* App screenshot */}
+              <div className="relative mt-2 rounded-[26px] bg-gradient-to-br from-[#C162FF] via-[#B14FE9] to-[#F37FB0] shadow-card-soft overflow-hidden h-96">
+                <Image
+                  src="/imgs/TestimonialsSection/cmm-big@2x.png.png"
+                  alt="CleanMyMac application interface"
+                  fill
+                  className="object-cover"
+                />
               </div>
-            </div>
+          </div>
           </Card>
 
-          <div className="flex flex-col gap-6">
-            <Card className="bg-surface-subtle p-5">
-              <p className="text-xs font-medium mb-1 text-white">
-                Keep everything secure
-              </p>
-              <p className="text-[11px] text-text-subtle mb-4">
-                Password managers, backup tools, and security utilities keep
-                your data safe without extra subscriptions.
-              </p>
-              <div className="flex items-center gap-3 text-[11px] text-text-muted">
-                <div className="h-8 w-8 rounded-xl bg-accent.blue/20" />
-                <div>
-                  <p className="text-xs text-white">Encrypted vaults</p>
-                  <p>Only you own your keys.</p>
+          {/* Bottom row - two feature cards */}
+          <div className="grid grid-cols-2 gap-5">
+            {bottomFeatureCards.map((card) => (
+              <Card
+                key={card.title}
+                className={`flex flex-col rounded-[32px] ${card.bgColor} px-10 py-8 shadow-card-soft border-0`}
+              >
+                {/* Screenshot at top */}
+                <div className="mb-4 h-64 w-full overflow-hidden rounded-2xl flex items-center justify-center">
+                  <Image
+                    src={card.screenshot}
+                    alt={`${card.title} screenshot`}
+                    width={420}
+                    height={260}
+                    className="object-contain"
+                  />
                 </div>
-              </div>
-            </Card>
 
-            <Card className="bg-surface-subtle p-5">
-              <p className="text-xs font-medium mb-1 text-white">
-                Create without friction
-              </p>
-              <p className="text-[11px] text-text-subtle mb-4">
-                Design, write, capture ideas, and ship faster with creative apps
-                that live right in your Dock.
-              </p>
-              <div className="flex items-center gap-3 text-[11px] text-text-muted">
-                <div className="h-8 w-8 rounded-xl bg-accent.yellow/20" />
-                <div>
-                  <p className="text-xs text-white">Built for makers</p>
-                  <p>From wireframes to final copy.</p>
+                {/* Icon and text at bottom */}
+                <div className="flex items-center gap-3">
+                  <Image
+                    src={card.icon}
+                    alt={`${card.title} icon`}
+                    width={32}
+                    height={32}
+                  />
+                  <div>
+                    <p
+                      className={`mb-1 text-sm font-semibold ${card.bgColor === "bg-blue-900" ? "text-white" : "text-gray-900"
+                        }`}
+                    >
+                      {card.title}
+                    </p>
+                    <p
+                      className={`text-[11px] ${card.bgColor === "bg-blue-900"
+                          ? "text-text-subtle"
+                          : "text-gray-700"
+                        }`}
+                    >
+                      {card.description}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </Card>
+              </Card>
+            ))}
           </div>
         </div>
+
       </Container>
     </Section>
   );

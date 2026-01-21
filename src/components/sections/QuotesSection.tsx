@@ -2,24 +2,34 @@ import { Container } from "../layout/Container";
 import { Section } from "../layout/Section";
 import { Card } from "../ui/Card";
 
-const quotes = [
+// User testimonials with proper styling
+const userTestimonials = [
   {
-    label: "Writers",
     quote:
-      "“I replaced half a dozen separate subscriptions with Setapp. All my writing tools are just there.”",
-    name: "Jordan, copywriter",
+      "Have been using Setapp for almost two years, and I have to say it's the best and the most cost-effective way of having apps on Mac.",
+    author: "Arash Pourhabibi",
+    handle: "@ArashPourhabibi",
+    platform: "Twitter",
+    bgColor: "bg-purple-600",
+    textColor: "text-white",
   },
   {
-    label: "Developers",
     quote:
-      "“From diff tools to menu bar utilities, Setapp has an app for every part of my workflow.”",
-    name: "Ravi, iOS engineer",
+      "My favorites ❤️ from @Setapp Ulysses, CleanMyMac X, Paste, MindNode, Swift Publisher.",
+    author: "Mauricio Sanchez",
+    handle: "@MauricioSanchez",
+    platform: "Instagram",
+    bgColor: "bg-orange-400",
+    textColor: "text-black",
   },
   {
-    label: "Teams",
     quote:
-      "“New teammates get a Mac and Setapp. That’s our whole onboarding stack.”",
-    name: "Chiara, ops lead",
+      "For those of you that wonder where I discover/get all the awesome apps for my Mac that I use, a lot of them are from Setapp!",
+    author: "Meredith Sweet",
+    handle: "@meredith.sweet.sfba.realtor",
+    platform: "Facebook",
+    bgColor: "bg-purple-700",
+    textColor: "text-white",
   },
 ];
 
@@ -27,25 +37,8 @@ export function QuotesSection() {
   return (
     <Section className="py-20 lg:py-24 pt-10">
       <Container>
-        <div className="mb-8 flex items-end justify-between">
-          <div>
-            <p className="text-[11px] uppercase tracking-[0.2em] text-text-subtle mb-2">
-              In your words
-            </p>
-            <h2 className="text-2xl font-semibold">Why people stay with Setapp.</h2>
-          </div>
-        </div>
+        <div>
 
-        <div className="grid grid-cols-3 gap-5">
-          {quotes.map((item) => (
-            <Card key={item.label} className="bg-surface-subtle px-6 py-6">
-              <p className="text-[11px] uppercase tracking-[0.18em] text-text-subtle mb-3">
-                {item.label}
-              </p>
-              <p className="text-sm text-text-muted mb-4">{item.quote}</p>
-              <p className="text-xs text-white">{item.name}</p>
-            </Card>
-          ))}
         </div>
       </Container>
     </Section>

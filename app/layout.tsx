@@ -1,11 +1,34 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
+// Avenir Next font from local files in app/fonts/
+const avenirNext = localFont({
+  src: [
+    {
+      path: "./fonts/AvenirNextLTPro-Regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/AvenirNextLTPro-Demi.otf",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "./fonts/AvenirNextLTPro-Bold.otf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "./fonts/AvenirNextLTPro-Heavy.otf",
+      weight: "800",
+      style: "normal",
+    },
+  ],
+  variable: "--font-avenir-next",
   display: "swap",
+  fallback: ["system-ui", "sans-serif"],
 });
 
 export const metadata: Metadata = {
@@ -20,7 +43,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} bg-background text-text-primary`}>
+      <head>
+      </head>
+      <body
+        className={`${avenirNext.variable} bg-background text-text-primary`}
+      >
         {children}
       </body>
     </html>

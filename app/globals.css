@@ -4,8 +4,9 @@
 
 html,
 body {
-  @apply text-text-primary font-sans;
+  @apply text-text-primary;
   background-color: #26262B;
+  font-family: var(--font-avenir-next), "Avenir Next", system-ui, sans-serif;
 }
 
 body {
