@@ -182,7 +182,7 @@ export function HeaderHeroSection() {
         </div>
 
         {/* Headline - exact positioning and styling */}
-        <div className="absolute top-[199px] left-1/2 -translate-x-1/2 w-[680px] h-[204.51px] max-w-[680px] flex items-center justify-center pr-[56.64px] pb-[0.51px] pl-[56.36px]">
+        <div className="absolute top-[199px] left-1/2 -translate-x-1/2 w-[700px] h-[204.51px] max-w-[700px] flex items-center justify-center pr-[56.64px] pb-[0.51px] pl-[56.36px]">
           <h1 className="font-avenir font-bold text-[64px] text-white leading-[67.84px] tracking-[1px] text-center">
             Dozens of apps.
             <br />

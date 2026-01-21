@@ -71,56 +71,92 @@ export function FeaturesSection() {
                   className="max-w-[1106px] object-cover"
                 />
               </div>
-          </div>
+            </div>
           </Card>
 
           {/* Bottom row - two feature cards */}
-          <div className="w-[1200px] h-[633px] grid grid-cols-2 gap-5 pr-[10px] pl-[10px]">
+          <div className="w-[1200px] h-[633px] grid grid-cols-2 gap-5 pr-[10px]">
             {bottomFeatureCards.map((card) => {
               // Set background color based on card title
-              const bgColor = card.title === "Join meetings in a click" 
-                ? "bg-[#384C75]" 
+              const bgColor = card.title === "Join meetings in a click"
+                ? "bg-[#384C75]"
                 : "bg-[#F4F0E4]";
-              
-              return (
-              <Card
-                key={card.title}
-                className={`w-[580px] h-[632.6px] flex flex-col justify-between rounded-[20px] ${bgColor} px-10 pb-[59.54px] pt-8 shadow-card-soft border-0`}
-              >
-                {/* Screenshot at top */}
-                <div className="mb-4 h-64 w-full overflow-hidden rounded-2xl flex items-center justify-center">
-                  <Image
-                    src={card.screenshot}
-                    alt={`${card.title} screenshot`}
-                    width={420}
-                    height={260}
-                    className="object-contain"
-                  />
-                </div>
 
-                {/* Icon and text at bottom */}
-                <div className="flex items-center gap-3">
-                  <Image
-                    src={card.icon}
-                    alt={`${card.title} icon`}
-                    width={32}
-                    height={32}
-                  />
-                  <div>
-                    <p className={`mb-1 text-sm font-semibold ${card.title === "Join meetings in a click" ? "text-white" : "text-gray-900"}`}>
-                      {card.title}
-                    </p>
-                    <p className={`text-[11px] ${card.title === "Join meetings in a click" ? "text-white/80" : "text-gray-700"}`}>
-                      {card.description}
-                    </p>
-                  </div>
-                </div>
-              </Card>
+              // Set padding-bottom based on card title
+              const paddingBottom = card.title === "Write code"
+                ? "pb-16"
+                : "pb-0";
+
+              return (
+                <Card
+                  key={card.title}
+                  className={`w-[580px] h-[632.6px] flex flex-col items-center justify-between rounded-[20px] ${bgColor} px-10 ${paddingBottom} pt-16 shadow-card-soft border-0`}
+                >
+                  {/* Screenshot at top */}
+                  {card.title === "Write code" ? (
+                    <div className="relative mb-4 w-[580px] h-[400.52px] overflow-visible rounded-[20px] flex flex-col items-center">
+                      <Image
+                        src={card.screenshot}
+                        alt={`${card.title} screenshot`}
+                        fill
+                        className="object-cover !top-[-20px]"
+                      />
+                    </div>
+                  ) : (
+                    <div className="w-[580px] h-[160.54px] flex flex-col items-start gap-[19px] pr-[60px] pl-[60px]">
+                      <Image
+                        src={card.icon}
+                        alt={`${card.title} icon`}
+                        width={68}
+                        height={68}
+                      />
+                      <div>
+                        <p className={`font-avenir font-semibold text-[26px] leading-[40.04px] tracking-[0%] flex items-center ${card.title === "Join meetings in a click" ? "text-white" : "text-[#26262B]"}`}>
+                          {card.title}
+                        </p>
+                        <p className={`font-avenir font-normal text-[18px] leading-[32.04px] tracking-[0%] flex items-center ${card.title === "Join meetings in a click" ? "text-white" : "text-[#26262B]"}`}>
+                          {card.description}
+                        </p>
+                      </div>
+                    </div>
+                  )}
+
+                  {card.title === "Write code" ? (
+                    <div className="w-[580px] h-[172.54px] flex flex-col items-start gap-[19px] pr-[60px] pl-[60px]">
+                      <Image
+                        src={card.icon}
+                        alt={`${card.title} icon`}
+                        width={80}
+                        height={80}
+                      />
+                      <div className="w-[460px] h-[73.54px] pr-[77px]">
+                        <p className="font-avenir font-semibold text-[26px] leading-[40.04px] tracking-[0%] text-[#26262B] flex items-center">
+                          {card.title}
+                        </p>
+                        <p className="font-avenir w-[500px] max-w-[500px] font-normal text-[18px] leading-[32.04px] tracking-[0%] text-[#26262B] flex items-center">
+                          {card.description}
+                        </p>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="mb-0 w-[580px] h-[360px] overflow-hidden rounded-[20px] flex items-center justify-center">
+
+                      <Image
+                        src={card.screenshot}
+                        alt={`${card.title} screenshot`}
+                        width={580}
+                        height={360}
+                        className="object-contain"
+                      />
+                    </div>
+                  )}
+
+                </Card>
               );
             })}
           </div>
-        </div>
 
+        </div>
       </Container>
     </Section>
   );

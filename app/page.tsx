@@ -1,5 +1,6 @@
 import { HeaderHeroSection } from "@/components/sections/HeaderHeroSection";
 import { FeaturesSection } from "@/components/sections/FeaturesSection";
+import { JourneySection } from "@/components/sections/JourneySection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { QuotesSection } from "@/components/sections/QuotesSection";
 import { PricingSection } from "@/components/sections/PricingSection";
@@ -10,6 +11,7 @@ export default function HomePage() {
     <main>
       <HeaderHeroSection />
       <FeaturesSection />
+      <JourneySection />
       <TestimonialsSection />
       <QuotesSection />
       <PricingSection />
