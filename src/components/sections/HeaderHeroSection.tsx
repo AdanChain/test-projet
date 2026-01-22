@@ -50,11 +50,11 @@ export function HeaderHeroSection() {
               <div className="flex items-center gap-2 md:gap-[25px]">
                 <div className="h-4 w-px bg-border-subtle mx-3" />
                 <Image src="/imgs/header/en.svg.png" alt="English" width={18} height={13.5} />
-                <button className="text-[14px] text-text-muted hover:text-white transition-colors">
+                <button className="text-[14px] text-text-muted hover:text-white opacity-100 text-white">
                   Sign In
                 </button>
                 <button
-                  className="h-[32px] w-[101.03px] flex items-center justify-center text-[14px] text-white border border-white rounded-[6px] transition-colors hover:bg-white/10 pt-[5.5px] pr-[23.03px] pb-[6.5px] pl-[23px]"
+                  className="h-[32px] w-[101.03px] flex items-center justify-center text-[14px] text-white border border-white rounded-[6px] transition-colors hover:bg-white/10 pt-[5.5px] pr-[23.03px] pb-[6.5px] pl-[23px] opacity-80"
                 >
                   Try free
                 </button>
