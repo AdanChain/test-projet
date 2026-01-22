@@ -1,70 +1,130 @@
-# Getting Started with Create React App
+# Setapp Landing Page
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive landing page built with Next.js 14, React, TypeScript, and Tailwind CSS.
 
-## Available Scripts
+## Tech Stack
 
-In the project directory, you can run:
+- **Framework**: Next.js 14 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Font**: Avenir Next
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Prerequisites
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Node.js 18+ 
+- npm or yarn
 
-### `npm test`
+### Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+# Install dependencies
+npm install
 
-### `npm run build`
+# Run development server
+npm run dev
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Open [http://localhost:3000](http://localhost:3000) to view the application.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Build for Production
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+# Create production build
+npm run build
 
-### `npm run eject`
+# Start production server
+npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Deployment
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This project is configured for deployment on **Vercel** and **Netlify**.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Deploy to Vercel
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. **Option A: Using Vercel CLI**
+   ```bash
+   npm i -g vercel
+   vercel
+   ```
 
-## Learn More
+2. **Option B: Using GitHub Integration**
+   - Push your code to GitHub
+   - Import your repository on [Vercel](https://vercel.com)
+   - Vercel will automatically detect Next.js and deploy
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. **Option C: Using Vercel Dashboard**
+   - Go to [vercel.com](https://vercel.com)
+   - Click "New Project"
+   - Import your Git repository
+   - Vercel will auto-detect the settings from `vercel.json`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Deploy to Netlify
 
-### Code Splitting
+1. **Option A: Using Netlify CLI**
+   ```bash
+   npm i -g netlify-cli
+   netlify deploy --prod
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+2. **Option B: Using GitHub Integration**
+   - Push your code to GitHub
+   - Go to [Netlify](https://www.netlify.com)
+   - Click "Add new site" → "Import an existing project"
+   - Connect your GitHub repository
+   - Netlify will use `netlify.toml` for configuration
 
-### Analyzing the Bundle Size
+3. **Option C: Drag & Drop**
+   - Build the project: `npm run build`
+   - Drag the `.next` folder to [Netlify Drop](https://app.netlify.com/drop)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Environment Variables
 
-### Making a Progressive Web App
+If you need environment variables, create a `.env.local` file:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```env
+# Example (add your own variables as needed)
+NEXT_PUBLIC_API_URL=https://api.example.com
+```
 
-### Advanced Configuration
+## Project Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```
+├── app/                    # Next.js App Router
+│   ├── layout.tsx         # Root layout
+│   ├── page.tsx           # Home page
+│   ├── globals.css        # Global styles
+│   └── fonts/             # Font files
+├── src/
+│   └── components/
+│       ├── sections/      # Page sections
+│       ├── layout/        # Layout components
+│       └── ui/            # UI components
+├── public/                # Static assets
+│   └── imgs/             # Images
+├── next.config.mjs        # Next.js configuration
+├── tailwind.config.ts     # Tailwind configuration
+└── package.json           # Dependencies
+```
 
-### Deployment
+## Features
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- ✅ Fully responsive design
+- ✅ Optimized images with Next.js Image
+- ✅ TypeScript for type safety
+- ✅ Tailwind CSS for styling
+- ✅ SEO-friendly structure
+- ✅ Production-ready build
 
-### `npm run build` fails to minify
+## Scripts
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm start` - Start production server
+- `npm run lint` - Run ESLint
+
+## License
+
+Private project - All rights reserved.
