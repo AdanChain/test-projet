@@ -38,7 +38,7 @@ export function FooterSection() {
 
   return (
     <Section as="footer" className="flex items-center justify-center pt-0 pr-4 pl-4 pb-0 border-t border-border-subtle/60 h-[629.84px] opacity-100 bg-[#2B2D32]">
-      <div className="flex flex-col justify-center gap-10 w-[1440px] h-[629.84px] opacity-100 mx-auto" style={{ width: '1440px', maxWidth: '1440px', height: '529.84px' }}>
+      <div className="flex flex-col justify-center gap-10 w-[1440px] max-w-[1440px] h-[529.84px] opacity-100 mx-auto">
         {/* Top row: logo + newsletter */}
         <div className="flex items-start justify-between w-[1380px] h-[325px] opacity-100">
           {/* Left: logo */}
@@ -68,7 +68,7 @@ export function FooterSection() {
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="w-[388px] h-[50.23px] opacity-100 pt-[14px] pr-[12px] pb-[14.23px] pl-[12px] rounded-tl-[6px] rounded-bl-[6px] bg-[#404547] text-sm text-white placeholder:text-gray-400 focus:outline-none border-0"
+                  className="flex-1 h-[50.23px] opacity-100 pt-[14px] pr-[12px] pb-[14.23px] pl-[12px] rounded-tl-[6px] rounded-bl-[6px] bg-[#404547] text-sm text-white placeholder:text-gray-400 focus:outline-none border-0"
                 />
                 <button className="w-[54px] h-[50.23px] opacity-100 pt-[18.12px] pr-[23px] pb-[18.11px] pl-[23px] rounded-tr-[6px] rounded-br-[6px] border border-[1px] bg-white text-gray-800 flex items-center justify-center hover:bg-gray-100 transition-colors flex-shrink-0">
                   <svg width="8" height="14" viewBox="0 0 14 24" fill="none" className="opacity-100 w-full h-full">
@@ -81,14 +81,14 @@ export function FooterSection() {
           </div>
 
           {/* Right: three link columns */}
-          <div className="grid grid-cols-3 gap-10 text-[11px] text-white">
+          <div className="grid grid-cols-3 gap-x-10 gap-y-0 text-[11px] text-white h-[100%]">
             {Object.entries(linkGroups).map(([section, links]) => (
-              <div key={section}>
-                <p className="font-avenir font-medium text-white text-[16px] leading-[32px] tracking-[0%] align-middle mb-3 w-full max-w-full">{section}</p>
-                <ul className="space-y-1.5">
+              <div key={section} className="h-full flex flex-col">
+                <p className="font-avenir font-medium text-white text-[16px] leading-[32px] tracking-[0%] align-middle mb-1 w-full max-w-full">{section}</p>
+                <ul className="flex flex-col gap-0 flex-1">
                   {links.map((label) => (
-                    <li key={label}>
-                      <a href="#" className="font-avenir font-normal text-white text-[16px] leading-[32px] tracking-[0%] align-middle hover:text-white transition-colors">
+                    <li key={label} className="mb-0">
+                      <a href="#" className="font-avenir font-normal text-white text-[16px] leading-[32px] tracking-[0%] align-middle hover:text-white transition-colors block">
                         {label}
                       </a>
                     </li>
@@ -101,75 +101,72 @@ export function FooterSection() {
 
         <div className="flex flex-row items-center justify-between gap-4">
           {/* DMCA badge */}
-          <div className="flex items-center gap-2">
-            <button className="px-3 py-1.5 bg-gray-700 text-white text-xs rounded">
+          <div className="flex items-center rounded overflow-hidden w-[150px] h-[26px] opacity-100 gap-[1px]">
+            <button className="font-arial font-bold text-white text-[11px] leading-[26px] tracking-[0%] align-middle uppercase bg-[#969799] rounded-l border-0 px-3 py-0 h-full">
               DMCA
             </button>
-            <button className="px-3 py-1.5 bg-gray-600 text-white text-xs rounded">
+            <button className="font-arial font-bold text-white text-[11px] leading-[26px] tracking-[0%] align-middle uppercase bg-[#404547] rounded-r border-0 px-3 py-0 w-[83.83999633789062px] h-[26px] opacity-100">
               PROTECTED
             </button>
           </div>
-          <div className="flex items-center gap-2 bg-[#1A1B21] border border-white/20 rounded-lg px-3 py-1.5">
+          <div className="flex items-center gap-2 rounded-lg px-3 py-1.5">
             <Image
               src="/imgs/header/en.svg.png"
               alt="English"
               width={16}
               height={12}
             />
-            <select className="bg-transparent text-xs text-white focus:outline-none cursor-pointer">
+            <select className="font-avenir font-normal bg-transparent text-white text-[16px] leading-[28.48px] tracking-[0%] align-middle focus:outline-none cursor-pointer appearance-none pr-4">
               <option>English</option>
             </select>
+            <svg width="12" height="8" viewBox="0 0 12 8" fill="none" className="flex-shrink-0">
+              <path d="M1 1L6 6L11 1" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
           </div>
         </div>
-        {/* Bottom row: copyright + legal + language + social */}
-        <div className="flex items-start justify-between text-[11px] pt-6 border-t border-gray-600">
-          {/* Left: DMCA badge + copyright + legal links */}
 
+        <div className="flex items-start justify-between text-[11px] pt-6 border-t border-[#E5E5E5]">
 
-          {/* Right: language selector + social icons */}
-          <div className="flex items-center gap-4">
+          <div className="flex flex-col gap-4 w-full max-w-full">
             {/* Copyright and legal */}
-            <div className="flex flex-col gap-1">
-              <p className="text-[10px] text-white">
-                © {currentYear} Setapp Limited, 9 Tallow Street, Youghal, Co.
-                Cork, P36YE14, Ireland. Reg. 584165. VAT ID: IE3425001BH
+            <div className="flex flex-row w-full justify-between">
+              <p className="font-avenir font-normal text-white text-[12px] leading-[21.36px] tracking-[0%] align-middle opacity-100">
+              © 2023 Setapp Limited, 9 Tallow Street, Youghal, Co. Cork, P36YE14, Ireland. Reg. 584165. VAT ID: IE3425001BH
               </p>
-              <div className="flex items-center gap-2">
-                <a href="#" className="hover:text-white transition-colors text-[10px] text-white">
-                  Terms of Use
-                </a>
-                <span className="text-[10px] text-white">•</span>
-                <a href="#" className="hover:text-white transition-colors text-[10px] text-white">
-                  Privacy Policy
-                </a>
+              <div className="flex gap-2">
+                <button
+                  className="h-7 w-7 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors"
+                  aria-label="Facebook"
+                >
+                  <Image src="/imgs/footer/Vector.png" alt="Facebook" width={26} height={26} className="filter brightness-0 invert opacity-45" />
+                </button>
+                <button
+                  className="h-7 w-7 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors"
+                  aria-label="Twitter"
+                >
+                  <Image src="/imgs/footer/Vector (1).png" alt="Twitter" width={26} height={26} className="filter brightness-0 invert opacity-45" />
+                </button>
+                <button
+                  className="h-7 w-7 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors"
+                  aria-label="Instagram"
+                >
+                  <Image src="/imgs/footer/Vector (2).png" alt="Instagram" width={26} height={26} className="filter brightness-0 invert opacity-45" />
+                </button>
+                <button
+                  className="h-7 w-7 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors"
+                  aria-label="YouTube"
+                >
+                  <Image src="/imgs/footer/Vector (3).png" alt="YouTube" width={26} height={26} className="filter brightness-0 invert opacity-45" />
+                </button>
               </div>
             </div>
-
-            <div className="flex gap-2">
-              <button
-                className="h-7 w-7 rounded-full border border-white/30 bg-[#1A1B21] flex items-center justify-center hover:bg-gray-700 transition-colors"
-                aria-label="Facebook"
-              >
-                <Image src="/imgs/footer/Vector.png" alt="Facebook" width={16} height={16} className="filter brightness-0 invert" />
-              </button>
-              <button
-                className="h-7 w-7 rounded-full border border-white/30 bg-[#1A1B21] flex items-center justify-center hover:bg-gray-700 transition-colors"
-                aria-label="Twitter"
-              >
-                <Image src="/imgs/footer/Vector (1).png" alt="Twitter" width={16} height={16} className="filter brightness-0 invert" />
-              </button>
-              <button
-                className="h-7 w-7 rounded-full border border-white/30 bg-[#1A1B21] flex items-center justify-center hover:bg-gray-700 transition-colors"
-                aria-label="Instagram"
-              >
-                <Image src="/imgs/footer/Vector (2).png" alt="Instagram" width={16} height={16} className="filter brightness-0 invert" />
-              </button>
-              <button
-                className="h-7 w-7 rounded-full border border-white/30 bg-[#1A1B21] flex items-center justify-center hover:bg-gray-700 transition-colors"
-                aria-label="YouTube"
-              >
-                <Image src="/imgs/footer/Vector (3).png" alt="YouTube" width={16} height={16} className="filter brightness-0 invert" />
-              </button>
+            <div className="flex items-center gap-2 opacity-60">
+              <a href="#" className="font-avenir font-normal text-[#969799] text-[12px] leading-[21.36px] tracking-[0%] align-middle hover:text-white transition-colors">
+                Terms of Use
+              </a>
+              <a href="#" className="font-avenir font-normal text-[#969799] text-[12px] leading-[21.36px] tracking-[0%] align-middle hover:text-white transition-colors">
+                Privacy Policy
+              </a>
             </div>
           </div>
         </div>

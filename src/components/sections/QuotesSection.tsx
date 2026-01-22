@@ -39,7 +39,7 @@ const userTestimonials = [
 
 export function QuotesSection() {
   return (
-    <Section className="relative flex justify-center h-[746.52px] pt-0 pr-[40px] pb-0 pl-[40px] bg-white opacity-100">
+    <Section className="relative flex justify-center h-[746.52px] pt-0 pr-[40px] pb-0 pl-[40px] bg-white opacity-100 border-0 overflow-hidden" style={{ marginTop: '-1px', marginBottom: '-1px' }}>
       <Container className="absolute bottom-0 w-[1260px] max-w-[1260px] h-[626.52px] pr-[30px] pb-0 pl-[30px] opacity-100 flex flex-col items-center gap-12 relative">
         {/* Header section */}
         <div className="w-[1200px] h-[64.08px] flex items-start justify-between mb-8 opacity-100">
@@ -72,12 +72,12 @@ export function QuotesSection() {
 
             {/* Carousel navigation arrows */}
             <div className="flex items-center gap-2">
-              <button className="w-8 h-8 rounded-full bg-white hover:bg-gray-50 flex items-center justify-center transition-colors">
+              <button className="w-8 h-8 rounded-full !bg-white hover:bg-gray-50 flex items-center justify-center transition-colors">
                 <svg viewBox="0 0 14 24" fill="none" className="text-[#26262B] w-full h-full">
                   <path d="M10 6L4 12L10 18" stroke="currentColor" strokeWidth="2" strokeLinecap="butt" strokeLinejoin="miter" opacity={0.7} />
                 </svg>
               </button>
-              <button className="w-8 h-8 rounded-full bg-white hover:bg-gray-50 flex items-center justify-center transition-colors">
+              <button className="w-8 h-8 rounded-full !bg-white hover:bg-gray-50 flex items-center justify-center transition-colors">
                 <svg viewBox="0 0 14 24" fill="none" className="text-[#26262B] w-full h-full">
                   <path d="M4 6L10 12L4 18" stroke="currentColor" strokeWidth="2" strokeLinecap="butt" strokeLinejoin="miter" opacity={0.7} />
                 </svg>
@@ -92,7 +92,7 @@ export function QuotesSection() {
             {userTestimonials.map((testimonial, index) => (
               <Card
                 key={index}
-                className={`bgColor: bg-[#F5F5F5] ${testimonial.textColor} p-6 pt-2 rounded-[15px] border-0 flex flex-col items-center justify-between w-[380px] h-[422.44px] opacity-100`}
+                className={`bgColor: !bg-[#F5F5F5] ${testimonial.textColor} p-6 pt-2 rounded-[15px] border-0 flex flex-col items-center justify-between w-[380px] h-[422.44px] opacity-100`}
               >
                 <p className={`font-avenir font-medium text-[26px] leading-[40.04px] tracking-[0%] ${testimonial.textColor} ${testimonial.bgColor} flex items-start w-[366px] !h-[299.48px] min-h-[299.48px] max-h-[299.48px] opacity-100 pt-[28.5px] ${testimonial.handle === "@m741s" ? "pr-12" : "pr-[22px]"} pb-[38.98px] pl-[22px] rounded-[8px]`}>
                   {testimonial.quote}
@@ -126,6 +126,11 @@ export function QuotesSection() {
                             testimonial.handle === "@meredith.sweet.silberstein" ? 32.04 : 24
                           }
                           className="object-contain"
+                          style={
+                            testimonial.handle === "@meredith.sweet.silberstein" 
+                              ? { width: "auto", height: "auto" }
+                              : undefined
+                          }
                         />
                       </div>
                     </div>

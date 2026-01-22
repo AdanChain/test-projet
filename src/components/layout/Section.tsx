@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import type { ReactNode, CSSProperties } from "react";
 import clsx from "clsx";
 
 type SectionProps = {
@@ -6,6 +6,7 @@ type SectionProps = {
   className?: string;
   children: ReactNode;
   as?: "section" | "footer";
+  style?: CSSProperties;
 };
 
 // Vertical rhythm wrapper matching Figma spacing between blocks
@@ -14,10 +15,11 @@ export function Section({
   className,
   children,
   as = "section",
+  style,
 }: SectionProps) {
   const Component = as;
   return (
-    <Component id={id} className={clsx(className)}>
+    <Component id={id} className={clsx(className)} style={style}>
       {children}
     </Component>
   );

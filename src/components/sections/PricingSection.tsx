@@ -5,11 +5,10 @@ import Image from "next/image";
 
 export function PricingSection() {
   return (
-    <Section id="pricing" className="pt-0 pb-0 relative h-[607.59px] opacity-100">
-      <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, #FFFFFF 0%, #FFFFFF 50%, #2B2D32 50%, #2B2D32 100%)' }}></div>
+    <Section id="pricing" className="pt-0 pb-0 relative h-[607.59px] opacity-100 border-0 overflow-hidden" style={{ background: 'linear-gradient(to bottom, #FFFFFF 0%, #FFFFFF 50%, #2B2D32 50%, #2B2D32 100%)', marginTop: '-1px' }}>
       <div className="relative z-10 w-[1440px] h-[607.59px] pr-[40px] pb-[20px] pl-[40px] opacity-100" style={{ width: '1440px', maxWidth: '1440px', height: '607.59px', margin: '0 auto' }}>
         {/* White CTA card with z-index 10 */}
-        <Card className="relative z-[10] w-[1330px] h-[587.59px] rounded-[20px] bg-[#f5f5f5] pr-[70px] pl-[70px] pt-10 pt-[110px] pb-10 border-0 opacity-100">
+        <Card className="relative z-[10] w-[1330px] h-[587.59px] rounded-[20px] !bg-[#f5f5f5] pr-[70px] pl-[70px] pt-10 pt-[110px] pb-10 border-0 opacity-100">
           <div className="flex items-start justify-between mb-8">
             {/* Logo */}
             <div className="w-[76px] h-[120px] rounded-[16px] flex justify-start opacity-100">

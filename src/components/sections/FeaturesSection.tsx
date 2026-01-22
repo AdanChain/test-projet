@@ -27,10 +27,10 @@ export function FeaturesSection() {
       <Container className="relative w-[1180px] max-w-[1180px] h-[1519px] max-h-[1519px] pr-0 pl-0 pt-16 border-t border-[#E5E5E5]">
         {/* Section header - title on left, subtitle on right */}
         <div className="mb-10 flex items-start justify-between pt-10">
-          <h2 className="w-[550px] h-[52.84px] max-w-[550px] font-avenir font-semibold text-[36px] leading-[51.84px] tracking-[1px] text-white flex items-center pr-[55px] pb-[0.84px] pl-[10px]">
+          <h2 className="w-[550px] !h-[52.84px] max-w-[550px] font-avenir font-semibold text-[36px] leading-[51.84px] tracking-[1px] text-white flex items-center pr-[55px] pb-[0.84px] pl-[10px]">
             What you get on Setapp.
           </h2>
-          <p className="w-[600px] h-[72.34px] max-w-[600px] font-avenir font-normal text-[18px] leading-[32.04px] text-white flex items-center pr-[45px] pb-[7.34px] pl-[10px]">
+          <p className="w-[600px] !h-[72.34px] max-w-[600px] font-avenir font-normal text-[18px] leading-[32.04px] text-white flex items-center pr-[45px] pb-[7.34px] pl-[10px]">
             With a single monthly subscription at $9.99, you get 240+ apps for
             your Mac.
           </p>
@@ -38,7 +38,7 @@ export function FeaturesSection() {
 
         <div className="absolute top-[260.83px] w-[1200px] h-[1258px] flex flex-col gap-5">
           {/* Top large card - Keep your Mac clean */}
-          <Card className="overflow-hidden w-[1180px] h-[605px] rounded-[20px] bg-[#DF96AE] p-0 border-0 flex flex-col justify-between pt-[60px]">
+          <Card className="overflow-hidden w-[1180px] h-[605px] rounded-[20px] !bg-[#DF96AE] p-0 border-0 flex flex-col justify-between pt-[60px]">
             <div className="pb-6">
               {/* Header with icon and text */}
               <div className="w-[1180px] h-[80px] flex items-start gap-8 mb-6 pr-[552px] pl-[60px]">
@@ -79,8 +79,8 @@ export function FeaturesSection() {
             {bottomFeatureCards.map((card) => {
               // Set background color based on card title
               const bgColor = card.title === "Join meetings in a click"
-                ? "bg-[#384C75]"
-                : "bg-[#F4F0E4]";
+                ? "!bg-[#384C75]"
+                : "!bg-[#F4F0E4]";
 
               // Set padding-bottom based on card title
               const paddingBottom = card.title === "Write code"

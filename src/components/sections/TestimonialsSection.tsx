@@ -4,11 +4,10 @@ import { Card } from "../ui/Card";
 
 export function TestimonialsSection() {
   return (
-    <Section id="stories" className="pt-4 pb-16 relative border-0 border-b-0">
-      <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, #26262B 0%, #26262B 50%, #FFFFFF 50%, #FFFFFF 100%)' }}></div>
-      <div className="relative pr-[0px] pl-[0px] rounded-[20px] overflow-hidden z-10" style={{ width: '1440px', maxWidth: '1440px', height: '720px', margin: '0 auto' }}>
+    <Section id="stories" className="pt-4 pb-16 relative border-0 overflow-hidden" style={{ background: 'linear-gradient(to bottom, #26262B 0%, #26262B 50%, #FFFFFF 50%, #FFFFFF 100%)', marginBottom: '-1px' }}>
+      <div className="relative pr-8 pl-8 rounded-[20px] overflow-hidden z-10" style={{ width: '1440px', maxWidth: '1440px', height: '720px', margin: '0 auto' }}>
         {/* Jason Staczek testimonial card with z-index 10 */}
-        <Card className="relative z-[10] flex w-full h-full rounded-[20px] bg-[#754F70] p-10 border-0 overflow-hidden">
+        <Card className="relative z-[10] flex w-full h-full rounded-[20px] !bg-[#754F70] p-10 border-0 overflow-hidden">
           <div className="w-full h-full flex items-start gap-8 pl-8">
             {/* Left side - Text content */}
             <div className="h-full flex flex-col justify-around flex-1">
