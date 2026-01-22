@@ -117,8 +117,8 @@ export function FeaturesSection() {
                         <p className={`font-avenir font-normal text-[18px] leading-[32.04px] tracking-[0%] flex items-center ${card.title === "Join meetings in a click" ? "text-white" : "text-[#26262B]"}`}>
                           {card.description}
                         </p>
-                      </div>
-                    </div>
+                </div>
+              </div>
                   )}
 
                   {card.title === "Write code" ? (
@@ -136,8 +136,8 @@ export function FeaturesSection() {
                         <p className="font-avenir w-[500px] max-w-[500px] font-normal text-[18px] leading-[32.04px] tracking-[0%] text-[#26262B] flex items-center">
                           {card.description}
                         </p>
-                      </div>
-                    </div>
+                </div>
+              </div>
                   ) : (
                     <div className="mb-0 w-[580px] h-[360px] overflow-hidden rounded-[20px] flex items-center justify-center">
 
@@ -151,7 +151,7 @@ export function FeaturesSection() {
                     </div>
                   )}
 
-                </Card>
+            </Card>
               );
             })}
           </div>

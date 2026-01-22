@@ -1,13 +1,12 @@
 import Image from "next/image";
-import { Container } from "../layout/Container";
 import { Section } from "../layout/Section";
 import { Card } from "../ui/Card";
 
 export function TestimonialsSection() {
   return (
-    <Section id="stories" className="pt-4 pb-16 relative">
+    <Section id="stories" className="pt-4 pb-16 relative border-0 border-b-0">
       <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, #26262B 0%, #26262B 50%, #FFFFFF 50%, #FFFFFF 100%)' }}></div>
-      <Container className="relative w-[1355px] max-w-[1355px] xl:max-w-[1355px] !h-[720px] max-h-[720px] pr-[0px] pl-[0px] rounded-[20px] overflow-hidden z-10">
+      <div className="relative pr-[0px] pl-[0px] rounded-[20px] overflow-hidden z-10" style={{ width: '1440px', maxWidth: '1440px', height: '720px', margin: '0 auto' }}>
         {/* Jason Staczek testimonial card with z-index 10 */}
         <Card className="relative z-[10] flex w-full h-full rounded-[20px] bg-[#754F70] p-10 border-0 overflow-hidden">
           <div className="w-full h-full flex items-start gap-8 pl-8">
@@ -56,15 +55,8 @@ export function TestimonialsSection() {
             </button>
           </div>
         </Card>
-      </Container>
-
-      {/* Carousel indicator dots - bottom center */}
-      <div className="relative z-10 w-[1395px] h-[12px] flex items-center justify-center gap-[25px] mx-auto mt-8">
-        <div className="w-3 h-3 rounded-full bg-[#26262B]"></div>
-        <div className="w-3 h-3 rounded-full bg-gray-300"></div>
-        <div className="w-3 h-3 rounded-full bg-gray-300"></div>
-        <div className="w-3 h-3 rounded-full bg-gray-300"></div>
       </div>
+
     </Section>
   );
 }
