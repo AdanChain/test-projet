@@ -5,10 +5,11 @@ import Image from "next/image";
 
 export function PricingSection() {
   return (
-    <Section id="pricing" className="py-20 lg:py-24 pt-6 relative">
-      <Container className="relative">
+    <Section id="pricing" className="py-20 lg:py-24 pt-[88px] relative h-[607.59px] opacity-100">
+      <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, #FFFFFF 0%, #FFFFFF 50%, #2B2D32 50%, #2B2D32 100%)' }}></div>
+      <Container className="relative z-10 w-[1330px] h-[587.59px] rounded-[20px] opacity-100">
         {/* White CTA card with z-index 10 */}
-        <Card className="relative z-[10] w-full rounded-[20px] bg-white p-10 shadow-card-soft border-0">
+        <Card className="relative z-[10] w-full rounded-[20px] bg-white p-10 border-0">
           <div className="flex items-start justify-between mb-8">
             {/* Logo */}
             <div className="w-16 h-16 rounded-[16px] bg-[#26262B] flex items-center justify-center">

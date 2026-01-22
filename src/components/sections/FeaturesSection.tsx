@@ -24,7 +24,7 @@ const bottomFeatureCards = [
 export function FeaturesSection() {
   return (
     <Section id="apps" className="py-20 pt-8 lg:pt-8 lg:pb-24">
-      <Container className="relative w-[1180px] h-[1519px] pr-0 pl-0 pt-16 border-t border-[#E5E5E5]">
+      <Container className="relative w-[1180px] max-w-[1180px] h-[1519px] max-h-[1519px] pr-0 pl-0 pt-16 border-t border-[#E5E5E5]">
         {/* Section header - title on left, subtitle on right */}
         <div className="mb-10 flex items-start justify-between pt-10">
           <h2 className="w-[550px] h-[52.84px] max-w-[550px] font-avenir font-semibold text-[36px] leading-[51.84px] tracking-[1px] text-white flex items-center pr-[55px] pb-[0.84px] pl-[10px]">
@@ -38,7 +38,7 @@ export function FeaturesSection() {
 
         <div className="absolute top-[260.83px] w-[1200px] h-[1258px] flex flex-col gap-5">
           {/* Top large card - Keep your Mac clean */}
-          <Card className="overflow-hidden w-[1180px] h-[605px] rounded-[20px] bg-[#DF96AE] p-0 shadow-card-soft border-0 flex flex-col justify-between pt-[60px]">
+          <Card className="overflow-hidden w-[1180px] h-[605px] rounded-[20px] bg-[#DF96AE] p-0 border-0 flex flex-col justify-between pt-[60px]">
             <div className="pb-6">
               {/* Header with icon and text */}
               <div className="w-[1180px] h-[80px] flex items-start gap-8 mb-6 pr-[552px] pl-[60px]">
@@ -90,7 +90,7 @@ export function FeaturesSection() {
               return (
                 <Card
                   key={card.title}
-                  className={`w-[580px] h-[632.6px] flex flex-col items-center justify-between rounded-[20px] ${bgColor} px-10 ${paddingBottom} pt-16 shadow-card-soft border-0`}
+                  className={`w-[580px] h-[632.6px] flex flex-col items-center justify-between rounded-[20px] ${bgColor} px-10 ${paddingBottom} pt-16 border-0`}
                 >
                   {/* Screenshot at top */}
                   {card.title === "Write code" ? (

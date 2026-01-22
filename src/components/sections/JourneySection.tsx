@@ -3,30 +3,16 @@ import { Section } from "../layout/Section";
 
 export function JourneySection() {
   return (
-    <Section className="py-20 lg:py-24">
-      <Container className="relative">
+    <Section className="pt-8 pb-24">
+      <Container className="relative flex flex-col gap-8">
         {/* View all superpowers link - centered at top */}
-        <div className="flex justify-center mb-10">
+        <div className="flex flex-row justify-center items-center mb-10">
           <a
             href="#superpowers"
             className="flex items-center gap-2 text-white hover:opacity-80 transition-opacity relative"
           >
-            <div className="w-[27px] h-[21px] pt-[2px] pr-[2.31px] pb-[2px] pl-[2px] relative top-[17.5px] left-[1px]">
-              <svg
-                width="27"
-                height="21"
-                viewBox="0 0 27 21"
-                fill="none"
-                className="text-white"
-              >
-                <path
-                  d="M15 1L22 10.5L15 20"
-                  stroke="currentColor"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+            <div>
+             <img src="/imgs/Vector.png" alt="Arrow" width={22.69} height={21} />
             </div>
             <span className="font-avenir font-medium text-[20px] leading-[30px] tracking-[1.6px] text-center text-white flex items-center">
               View all superpowers
@@ -35,7 +21,7 @@ export function JourneySection() {
         </div>
 
         {/* Main content area */}
-        <div className="w-[1180px] h-[156.84px] flex items-start justify-between mb-10">
+        <div className="w-[1180px] h-[156.84px] flex items-start justify-between mb-0">
           {/* Left side - Heading */}
           <h2 className="font-avenir font-bold text-white text-[36px] leading-[51.84px] tracking-[1px]">
             Your Setapp journey.
@@ -50,4 +36,6 @@ export function JourneySection() {
         {/* Separator line */}
         <div className="border-t border-[#E5E5E5]"></div>
       </Container>
- 
+    </Section>
+  );
+}

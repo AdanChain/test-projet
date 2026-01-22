@@ -34,6 +34,10 @@ const avenirNext = localFont({
 export const metadata: Metadata = {
   title: "Setapp-style Productivity Suite",
   description: "Dozens of apps. One subscription.",
+  icons: {
+    icon: "/imgs/Vector (5).png",
+    apple: "/imgs/Vector (5).png",
+  },
 };
 
 export default function RootLayout({
