@@ -30,8 +30,8 @@ export function HeaderHeroSection() {
             </div>
 
             {/* Center nav + right side actions */}
-            <div className="flex items-center gap-3">
-              <nav className="flex items-center h-[39.76px] justify-center gap-0" aria-label="Primary">
+            <div className="flex items-center gap-2 md:gap-3">
+              <nav className="hidden md:flex items-center h-[39.76px] justify-center gap-0" aria-label="Primary">
                 {mainNav.map((label) => {
                   const href = `#${label.toLowerCase().replace(/\s+/g, "-")}`;
                   return (
@@ -47,7 +47,7 @@ export function HeaderHeroSection() {
               </nav>
 
               {/* Language selector, sign in, and CTA */}
-              <div className="flex items-center gap-[25px]">
+              <div className="flex items-center gap-2 md:gap-[25px]">
                 <div className="h-4 w-px bg-border-subtle mx-3" />
                 <Image src="/imgs/header/en.svg.png" alt="English" width={18} height={13.5} />
                 <button className="text-[14px] text-text-muted hover:text-white transition-colors">
@@ -65,7 +65,7 @@ export function HeaderHeroSection() {
       </header>
 
       {/* Hero content - exact dimensions and positioning */}
-      <div className="relative w-[1440px] h-[595.59px] bg-[#26262B] mx-auto mt-32 flex justify-center">
+      <div className="relative w-full max-w-[1440px] min-h-[595.59px] h-auto md:h-[595.59px] bg-[#26262B] mx-auto mt-16 md:mt-32 flex justify-center overflow-hidden">
         {/* Logo container - centered horizontally */}
         <div className="absolute top-[15.63px] w-[128.75px] h-[128.75px] rounded-[16px] bg-[#000000] flex items-center justify-center">
           {/* Logo image - centered within container */}
@@ -77,9 +77,8 @@ export function HeaderHeroSection() {
           />
         </div>
 
-        {/* Left side floating cards - positioned relative to center */}
-        {/* Top left - Work with pics (orange diamond) */}
-        <div className="absolute top-[46px] left-[100px]">
+        {/* Left side floating cards - positioned relative to center - hidden on mobile */}
+        <div className="hidden lg:block absolute top-[46px] left-[100px]">
           <Image 
             src="/imgs/header-container/pics.svg.png" 
             alt="Work with pics" 
@@ -89,7 +88,7 @@ export function HeaderHeroSection() {
           />
         </div>
         {/* Small pink circular icon - slightly overlapping */}
-        <div className="absolute top-[177px] left-[100px] z-10">
+        <div className="hidden lg:block absolute top-[177px] left-[100px] z-10">
           <Image 
             src="/imgs/header-container/macpaw.svg.png" 
             alt="Macpaw" 
@@ -99,7 +98,7 @@ export function HeaderHeroSection() {
           />
         </div>
         {/* VPN PDF AD BLOCKER (light blue diamond) */}
-        <div className="absolute top-[169.64px] left-[204px] pt-0 pl-0">
+        <div className="hidden lg:block absolute top-[169.64px] left-[204px] pt-0 pl-0">
           <Image 
             src="/imgs/header-container/pdf.svg.png" 
             alt="PDF VPN Ad Blocker" 
@@ -109,7 +108,7 @@ export function HeaderHeroSection() {
           />
         </div>
         {/* Boost teamwork (light blue hexagonal) */}
-        <div className="absolute top-[338.51px] left-[95px] pt-0 pb-0">
+        <div className="hidden lg:block absolute top-[338.51px] left-[95px] pt-0 pb-0">
           <Image 
             src="/imgs/header-container/teamwork.svg.png" 
             alt="Boost teamwork" 
@@ -119,7 +118,7 @@ export function HeaderHeroSection() {
           />
         </div>
         {/* Stay secure (light green diamond) */}
-        <div className="absolute top-[418px] left-[100px]">
+        <div className="hidden lg:block absolute top-[418px] left-[100px]">
           <Image 
             src="/imgs/header-container/secure.svg.png" 
             alt="Stay secure" 
@@ -129,9 +128,9 @@ export function HeaderHeroSection() {
           />
         </div>
 
-        {/* Right side floating cards - positioned relative to center */}
+        {/* Right side floating cards - positioned relative to center - hidden on mobile */}
         {/* Top right - Fix wifi (light orange rectangle) */}
-        <div className="absolute top-[63.84px] right-[65px]">
+        <div className="hidden lg:block absolute top-[63.84px] right-[65px]">
           <Image 
             src="/imgs/header-container/wifi.svg.png" 
             alt="Fix wifi" 
@@ -141,7 +140,7 @@ export function HeaderHeroSection() {
           />
         </div>
         {/* Plan your day (light blue rectangle) */}
-        <div className="absolute top-[124px] right-[190px]">
+        <div className="hidden lg:block absolute top-[124px] right-[190px]">
           <Image 
             src="/imgs/header-container/plan.svg.png" 
             alt="Plan your day" 
@@ -151,7 +150,7 @@ export function HeaderHeroSection() {
           />
         </div>
         {/* Convert HEIC to JPG (white jagged circle) */}
-        <div className="absolute top-[235px] right-[45px] z-10">
+        <div className="hidden lg:block absolute top-[235px] right-[45px] z-10">
           <Image 
             src="/imgs/header-container/converter.svg.png" 
             alt="Convert HEIC to JPG" 
@@ -161,7 +160,7 @@ export function HeaderHeroSection() {
           />
         </div>
         {/* Manage your Mac (light pink rectangle) - positioned below Convert HEIC to JPG */}
-        <div className="absolute top-[336px] right-[100px] z-0">
+        <div className="hidden lg:block absolute top-[336px] right-[100px] z-0">
           <Image 
             src="/imgs/header-container/manage.svg.png" 
             alt="Manage your Mac" 
@@ -171,7 +170,7 @@ export function HeaderHeroSection() {
           />
         </div>
         {/* Code easier (light orange square) */}
-        <div className="absolute top-[440px] right-[120px] z-[1]">
+        <div className="hidden lg:block absolute top-[440px] right-[120px] z-[1]">
           <Image 
             src="/imgs/header-container/code.svg.png" 
             alt="Code easier" 
@@ -182,8 +181,8 @@ export function HeaderHeroSection() {
         </div>
 
         {/* Headline - exact positioning and styling */}
-        <div className="absolute top-[199px] left-1/2 -translate-x-1/2 w-[700px] h-[204.51px] max-w-[700px] flex items-center justify-center pr-[56.64px] pb-[0.51px] pl-[56.36px]">
-          <h1 className="font-avenir font-bold text-[64px] text-white leading-[67.84px] tracking-[1px] text-center">
+        <div className="absolute top-16 md:top-[199px] left-1/2 -translate-x-1/2 w-full max-w-[700px] min-h-[204.51px] h-auto md:h-[204.51px] flex items-center justify-center px-4 md:pr-[56.64px] md:pb-[0.51px] md:pl-[56.36px]">
+          <h1 className="font-avenir font-bold text-3xl sm:text-4xl md:text-[64px] text-white leading-tight md:leading-[67.84px] tracking-[1px] text-center">
             Dozens of apps.
             <br />
             One subscription.
@@ -193,30 +192,32 @@ export function HeaderHeroSection() {
         </div>
 
         {/* CTA buttons container - centered horizontally */}
-        <div className="absolute top-[451.51px] left-1/2 -translate-x-1/2 w-[365.93px] h-[52px] flex items-center gap-4">
-          <button className="w-[209.93px] h-[52px] flex items-center justify-center rounded-[6px] bg-white border border-white pt-[14px] pr-[30.93px] pb-[14px] pl-[32px] text-[14px] font-medium text-black hover:bg-gray-100 transition-colors">
+        <div className="absolute top-64 md:top-[451.51px] left-1/2 -translate-x-1/2 w-full max-w-[365.93px] min-h-[52px] h-auto md:h-[52px] flex flex-col sm:flex-row items-center justify-center gap-4 px-4">
+          <button className="w-full sm:w-[209.93px] h-[52px] flex items-center justify-center rounded-[6px] bg-white border border-white pt-[14px] pr-[30.93px] pb-[14px] pl-[32px] text-[14px] font-medium text-black hover:bg-gray-100 transition-colors">
             Try free for 7 days
           </button>
-          <button className="w-[62px] h-[52px] flex items-center justify-center rounded-[6px] bg-white border border-white pt-[10px] pr-[15px] pb-[10px] pl-[15px] hover:bg-gray-100 transition-colors">
-            <Image
-              src="/imgs/header-container/apple.png"
-              alt="Sign in with Apple"
-              width={24}
-              height={24}
-            />
-          </button>
-          <button className="w-[62px] h-[52px] flex items-center justify-center rounded-[6px] bg-white border border-white pt-[10px] pr-[15px] pb-[10px] pl-[15px] hover:bg-gray-100 transition-colors">
-            <Image
-              src="/imgs/header-container/google.svg.png"
-              alt="Sign in with Google"
-              width={24}
-              height={24}
-            />
-          </button>
+          <div className="flex gap-4">
+            <button className="w-[62px] h-[52px] flex items-center justify-center rounded-[6px] bg-white border border-white pt-[10px] pr-[15px] pb-[10px] pl-[15px] hover:bg-gray-100 transition-colors">
+              <Image
+                src="/imgs/header-container/apple.png"
+                alt="Sign in with Apple"
+                width={24}
+                height={24}
+              />
+            </button>
+            <button className="w-[62px] h-[52px] flex items-center justify-center rounded-[6px] bg-white border border-white pt-[10px] pr-[15px] pb-[10px] pl-[15px] hover:bg-gray-100 transition-colors">
+              <Image
+                src="/imgs/header-container/google.svg.png"
+                alt="Sign in with Google"
+                width={24}
+                height={24}
+              />
+            </button>
+          </div>
         </div>
 
         {/* Subheading */}
-        <p className="absolute top-[531.01px] left-1/2 -translate-x-1/2 w-[320px] h-[65px] max-w-[320px] font-avenir font-normal text-[18px] leading-[32.04px] text-gray-400 text-center flex items-center justify-center pr-[1.28px] pl-[1.72px]">
+        <p className="absolute top-80 md:top-[531.01px] left-1/2 -translate-x-1/2 w-full max-w-[320px] min-h-[65px] h-auto md:h-[65px] font-avenir font-normal text-base md:text-[18px] leading-relaxed md:leading-[32.04px] text-gray-400 text-center flex items-center justify-center px-4 md:pr-[1.28px] md:pl-[1.72px]">
           Power up your workflow with Setapp, a smart way to get apps.
         </p>
       </div>

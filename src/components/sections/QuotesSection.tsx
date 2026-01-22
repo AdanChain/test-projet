@@ -39,21 +39,21 @@ const userTestimonials = [
 
 export function QuotesSection() {
   return (
-    <Section className="relative flex justify-center h-[746.52px] pt-0 pr-[40px] pb-0 pl-[40px] bg-white opacity-100 border-0 overflow-hidden" style={{ marginTop: '-1px', marginBottom: '-1px' }}>
-      <Container className="absolute bottom-0 w-[1260px] max-w-[1260px] h-[626.52px] pr-[30px] pb-0 pl-[30px] opacity-100 flex flex-col items-center gap-12 relative">
+    <Section className="relative flex justify-center min-h-[746.52px] h-auto pt-0 pr-4 pb-8 md:pb-12 pl-4 md:pr-[40px] md:pl-[40px] bg-white opacity-100 border-0 overflow-hidden -mt-px -mb-px">
+      <Container className="absolute bottom-0 w-full max-w-[1260px] min-h-[626.52px] h-auto md:h-[626.52px] pr-4 pb-0 pl-4 md:pr-[30px] md:pl-[30px] opacity-100 flex flex-col items-center gap-8 md:gap-12 relative">
         {/* Header section */}
-        <div className="w-[1200px] h-[64.08px] flex items-start justify-between mb-8 opacity-100">
-          <div className="pr-32">
-            <h2 className="font-avenir font-semibold text-[#26262B] text-[36px] leading-[47.88px] tracking-[1.3px] flex items-center mb-2">
+        <div className="w-full max-w-[1200px] h-auto md:h-[64.08px] flex flex-col md:flex-row items-start justify-between mb-6 md:mb-8 opacity-100 gap-4 md:gap-0">
+          <div className="pr-0 md:pr-32">
+            <h2 className="font-avenir font-semibold text-[#26262B] text-2xl md:text-[36px] leading-tight md:leading-[47.88px] tracking-[1.3px] flex items-center mb-2">
               Setapp in your words.
             </h2>
           </div>
-          <p className="font-avenir font-normal text-gray-600 text-[18px] leading-[32.04px] tracking-[0%] flex items-center w-[300px] h-[65px] max-w-[300px] pr-[25px] pl-[10px] relative top-[-0.5px] opacity-100">
+          <p className="font-avenir font-normal text-gray-600 text-base md:text-[18px] leading-relaxed md:leading-[32.04px] tracking-[0%] flex items-center w-full md:w-[300px] min-h-[65px] h-auto md:h-[65px] max-w-full md:max-w-[300px] pr-0 md:pr-[25px] pl-0 md:pl-[10px] relative top-0 md:top-[-0.5px] opacity-100">
             What you say about how Setapp powers you up.
           </p>
 
           {/* Social media icons and carousel controls */}
-          <div className="flex flex-col items-end gap-8">
+          <div className="flex flex-col items-start md:items-end gap-4 md:gap-8">
             {/* Social media icons */}
             <div className="flex items-center gap-3">
               <div className="w-[48px] h-[48px] rounded-full flex items-center justify-center opacity-[0.9]">
@@ -128,7 +128,7 @@ export function QuotesSection() {
                           className="object-contain"
                           style={
                             testimonial.handle === "@meredith.sweet.silberstein" 
-                              ? { width: "auto", height: "auto" }
+                              ? { width: "9px", height: "19px" }
                               : undefined
                           }
                         />
@@ -151,7 +151,7 @@ export function QuotesSection() {
           </div>
 
           {/* Bottom border line */}
-          <div className="w-full h-[1px] bg-[#999999] mt-6"></div>
+          <div className="w-full h-[1px] bg-[#999999] mt-8 md:mt-12"></div>
         </div>
       </Container>
     </Section>

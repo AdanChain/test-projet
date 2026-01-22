@@ -37,12 +37,12 @@ export function FooterSection() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <Section as="footer" className="flex items-center justify-center pt-0 pr-4 pl-4 pb-0 border-t border-border-subtle/60 h-[629.84px] opacity-100 bg-[#2B2D32]">
-      <div className="flex flex-col justify-center gap-10 w-[1440px] max-w-[1440px] h-[529.84px] opacity-100 mx-auto">
+    <Section as="footer" className="flex items-center justify-center pt-0 pr-4 pl-4 pb-0 border-t border-border-subtle/60 min-h-[629.84px] h-auto md:h-[629.84px] opacity-100 bg-[#2B2D32]">
+      <div className="flex flex-col justify-center gap-6 md:gap-10 w-full max-w-[1440px] min-h-[529.84px] h-auto md:h-[529.84px] opacity-100 mx-auto px-4 md:px-0">
         {/* Top row: logo + newsletter */}
-        <div className="flex items-start justify-between w-[1380px] h-[325px] opacity-100">
+        <div className="flex flex-col md:flex-row items-start justify-between w-full max-w-[1380px] min-h-[325px] h-auto md:h-[325px] opacity-100 gap-6 md:gap-0">
           {/* Left: logo */}
-          <div className="w-[460px] h-[325px] max-w-[460px] opacity-100 flex flex-col gap-[78px] pr-[10px] pb-[109px] pl-[10px]">
+          <div className="w-full md:w-[460px] max-w-full md:max-w-[460px] min-h-[325px] h-auto md:h-[325px] opacity-100 flex flex-col gap-8 md:gap-[78px] pr-0 md:pr-[10px] pb-4 md:pb-[109px] pl-0 md:pl-[10px]">
             <div className="flex items-center gap-3 mb-4">
               <div className="h-9 w-9 rounded-xl flex items-center justify-start">
                 <Image
@@ -81,7 +81,7 @@ export function FooterSection() {
           </div>
 
           {/* Right: three link columns */}
-          <div className="grid grid-cols-3 gap-x-10 gap-y-0 text-[11px] text-white h-[100%]">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 md:gap-x-10 gap-y-4 md:gap-y-0 text-[11px] text-white min-h-[100%] h-auto md:h-[100%] w-full md:w-auto">
             {Object.entries(linkGroups).map(([section, links]) => (
               <div key={section} className="h-full flex flex-col">
                 <p className="font-avenir font-medium text-white text-[16px] leading-[32px] tracking-[0%] align-middle mb-1 w-full max-w-full">{section}</p>
@@ -99,9 +99,9 @@ export function FooterSection() {
           </div>
         </div>
 
-        <div className="flex flex-row items-center justify-between gap-4">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           {/* DMCA badge */}
-          <div className="flex items-center rounded overflow-hidden w-[150px] h-[26px] opacity-100 gap-[1px]">
+          <div className="flex items-center rounded overflow-hidden w-full sm:w-[150px] h-[26px] opacity-100 gap-[1px]">
             <button className="font-arial font-bold text-white text-[11px] leading-[26px] tracking-[0%] align-middle uppercase bg-[#969799] rounded-l border-0 px-3 py-0 h-full">
               DMCA
             </button>
@@ -129,8 +129,8 @@ export function FooterSection() {
 
           <div className="flex flex-col gap-4 w-full max-w-full">
             {/* Copyright and legal */}
-            <div className="flex flex-row w-full justify-between">
-              <p className="font-avenir font-normal text-white text-[12px] leading-[21.36px] tracking-[0%] align-middle opacity-100">
+            <div className="flex flex-col sm:flex-row w-full justify-between gap-4 sm:gap-0">
+              <p className="font-avenir font-normal text-white text-[10px] sm:text-[12px] leading-[21.36px] tracking-[0%] align-middle opacity-100 max-w-full">
               © 2023 Setapp Limited, 9 Tallow Street, Youghal, Co. Cork, P36YE14, Ireland. Reg. 584165. VAT ID: IE3425001BH
               </p>
               <div className="flex gap-2">

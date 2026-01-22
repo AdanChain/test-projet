@@ -1,5 +1,6 @@
 import { Container } from "../layout/Container";
 import { Section } from "../layout/Section";
+import Image from "next/image";
 
 export function JourneySection() {
   return (
@@ -12,7 +13,7 @@ export function JourneySection() {
             className="flex items-center gap-2 text-white hover:opacity-80 transition-opacity relative"
           >
             <div>
-             <img src="/imgs/Vector.png" alt="Arrow" width={22.69} height={21} />
+             <Image src="/imgs/Vector.png" alt="Arrow" width={23} height={21} />
             </div>
             <span className="font-avenir font-medium text-[20px] leading-[30px] tracking-[1.6px] text-center text-white flex items-center">
               View all superpowers
@@ -21,14 +22,14 @@ export function JourneySection() {
         </div>
 
         {/* Main content area */}
-        <div className="w-[1180px] h-[156.84px] flex items-start justify-between mb-0">
+        <div className="w-full max-w-[1180px] min-h-[156.84px] h-auto md:h-[156.84px] flex flex-col md:flex-row items-start justify-between mb-0 gap-4 md:gap-0">
           {/* Left side - Heading */}
-          <h2 className="font-avenir font-bold text-white text-[36px] leading-[51.84px] tracking-[1px]">
+          <h2 className="font-avenir font-bold text-white text-2xl md:text-[36px] leading-tight md:leading-[51.84px] tracking-[1px]">
             Your Setapp journey.
           </h2>
 
           {/* Right side - Description */}
-          <p className="font-avenir font-normal text-white text-[18px] leading-[32.04px] max-w-[600px]">
+          <p className="font-avenir font-normal text-white text-base md:text-[18px] leading-relaxed md:leading-[32.04px] max-w-full md:max-w-[600px]">
             Type in your task into Setapp search and get instant app recommendations.
           </p>
         </div>
